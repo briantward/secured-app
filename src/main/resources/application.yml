@@ -1,0 +1,80 @@
+server:
+  port: 8180
+logging:
+  level:
+    root: TRACE
+spring:
+  security:
+    saml2:
+      login:
+        relying-parties:
+          - entity-id: http://localhost:8080/auth/realms/saml-demo
+            registration-id: secured-app
+            web-sso-url: http://localhost:8080/auth/realms/saml-demo/protocol/saml
+            signing-credentials:
+              - private-key: |
+                  -----BEGIN PRIVATE KEY-----
+                  MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4tt0Sp964kCGL
+                  8AeXXql/5ZgQvl9JnBIOLqMR3pj04A6ueIrC+TPi7RBupBkkDJXzOI+PoF1SR7RT
+                  VoJ2uPD5X1yRDs+6X6Vrv3CsUfChEaJBPk7B9kuYuwfjOXb10o4gFMqZABG/FNeo
+                  IlP+5gHUUPheaojU47MP9vzsxXdUzHHxoMwVmgw7iaHpg5T4l0kSUSh0RjBs7bil
+                  HOQEzQEIK4B32KnaUg5KL5INBhflsv9I/GcdFBoNYu9lc/GtQJltUTFWXpyBAcrA
+                  sLX+hN/oamWigHj3awTjSGt60SkYbJTJcnaHG/J5H4tfDC15CVDLlRP002uML4PE
+                  3saWdxTLAgMBAAECggEAWfc21c9Nezc4H6BZEjDY/aIl3oHah0+su5ubcSip9xrq
+                  C7BKZYxa6TvttPXYCObYYg46XgoNafXirnSENq79L3hy7XP5WR0cxM4JYuTF/q1I
+                  Cd7/HRmI2Gq//LwQZMqYzqdRxhNykU7les69enksiuylC9d3rbj5jd0Oc4P6CyJy
+                  mzR0NjNvJpyMP3bVoUpqIRr3vctYuNfFFvIs9pxqNZpyeTm35yg3P3Sa1ghiU1G2
+                  cR2xgXOR5qn9nA/tP4ErwvE7aOaAz+BH9wHmonFdFwQs8GLtrYtj+5uHdi9A6wpD
+                  FfRduzW1hGVbYxB97lOk4CSm47Ebyjg0Q5xom4trAQKBgQD69hpQrOJbb6BtsKUS
+                  DPDKtNsYl7qI2y6N4Di++COoEHtJyLbfORkMwvn9/GQhhlbXwis4muIlHUCm2x1o
+                  vZ68gWKYnyZoHdk9YkAXxSAo6SmawjNVckeHIsOL6K3LAeOcZy8Ta74LXVwmhbSD
+                  Ox+joFbXrJUJwBL8UMO/EOzLSQKBgQC8bEM/JCIGkAUG1BzVn0yT1KFdClTPL9WC
+                  75BR5CpNqLvTdnHayoqAoe7rXbpGvFw0VgWk08Q3MqMVSrXuUGYae4wPM+6ZUxwK
+                  zuXsFIBOu78HR1gPwT+UyyxviHXSIsOgvS7ThPJ+D50n9RfA1fXXWyifBbWYoLT8
+                  hAMQT96rcwKBgHXDQEv1JG7lrbFrP7p9qgxk257prBWGTI0010v9orW9rizMa8vJ
+                  vlB3udmOMupsYJn0OlXgkBf8ZxclIOLCgBdS25JktCANSaB9VzgQP2wTJXvCf1Ys
+                  PxZRoNMpR0xIwabl4HhLia1JjPFisncWKl2c4sNn77PYltAhkgk5hvRJAoGAYriS
+                  byWeUjPo/k/qH57L/3RbayT7lGYqhuS/h7h01aV/a2bWdlzCPm0ZgeXksCUGZkFf
+                  yaFOX+E/AuvW8FrddCihFGIQM/MQcTU/z/ZZ12aUytp9cBu/FVVyHamwmX2vY6tb
+                  OmWgq53AqGvImzc/DCtt2AukvqgMy3TbKhO+xbMCgYEAigOqNVqtbsEIdeKPSjDU
+                  tIRQsot6rU30sXZ0+lbJTOQr2JqqVG6kDbIeINOjEQW/xm6lus95OFKxYAKDF0jj
+                  VoVNWDlaSOU228wz7FlhuHcDwlQ1nQqZDwtZrPimdIxpBGwWqSx0vNILeL3fkrPz
+                  /Hb4kVySj1e2TmMQ53VdH1o=
+                  -----END PRIVATE KEY-----
+                certificate: |
+                  -----BEGIN CERTIFICATE-----
+                  MIICpTCCAY0CBgGACpHgITANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDDAtzZWN1
+                  cmVkLWFwcDAeFw0yMjA0MDgxOTA0MzNaFw0zMjA0MDgxOTA2MTNaMBYxFDASBgNV
+                  BAMMC3NlY3VyZWQtYXBwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+                  uLbdEqfeuJAhi/AHl16pf+WYEL5fSZwSDi6jEd6Y9OAOrniKwvkz4u0QbqQZJAyV
+                  8ziPj6BdUke0U1aCdrjw+V9ckQ7Pul+la79wrFHwoRGiQT5OwfZLmLsH4zl29dKO
+                  IBTKmQARvxTXqCJT/uYB1FD4XmqI1OOzD/b87MV3VMxx8aDMFZoMO4mh6YOU+JdJ
+                  ElEodEYwbO24pRzkBM0BCCuAd9ip2lIOSi+SDQYX5bL/SPxnHRQaDWLvZXPxrUCZ
+                  bVExVl6cgQHKwLC1/oTf6GplooB492sE40hretEpGGyUyXJ2hxvyeR+LXwwteQlQ
+                  y5UT9NNrjC+DxN7GlncUywIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBagC1nHBI8
+                  ICwmR92zhJCaNxXb0FrJBED0jsdN7dWO30NvTaSjKAk/Yuvh3dIGwpc1oLQBBxRr
+                  p0C2RkamEzjrwWyvLjyVHY7mlo/9GSCCUM9NkQ0InmSdt0lWanqiPBGXXsLvzg5k
+                  nxmgk4Jkfrin/qFkDOLwgBy8vbKo/sKxO6X/n0Pdu02uRZTkts2BG6JnmSxBfCnq
+                  ukcbXUqSaN1QsOZeZsCDYiVO4OheuoYj+I34TIQzcxd46l9Qgqv6Jzp+wg5kACLI
+                  WZ0de20eeVH2I/hYz6M4pqJg+VKjDv8eAhKlKLfNVa76ct8a+UlGdoUvz4duDQpX
+                  zvIu43kLbnQy
+                  -----END CERTIFICATE-----
+            verification-credentials:
+              - |
+                -----BEGIN CERTIFICATE-----
+                MIICoTCCAYkCBgGACpGmmTANBgkqhkiG9w0BAQsFADAUMRIwEAYDVQQDDAlzYW1s
+                LWRlbW8wHhcNMjIwNDA4MTkwNDE5WhcNMzIwNDA4MTkwNTU5WjAUMRIwEAYDVQQD
+                DAlzYW1sLWRlbW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDJ6fBI
+                eKvmNdVZ+QrsRj2gDB8ofaXOPp+gDg+Oww2dyDh3pfYXk2g2PoCkOaSU2D61zxa4
+                TzW1Y6/iOUMabUK6vXHIGgXiMRsfpp2DHDQVNO5JH/xW8ta4aCooF3JQC+fI3MjC
+                MqBAoULf12kQT8qnL8pBMb1mFOt4F1I4cP17DJyULSvgFQ6yTcGlh3ApXC+0p6NB
+                tt7/FiyrFQNUN9QGMFM+yikBm6OmuZBiStahNKSMbfTh/XxT2u1xQ3wVK5VdQ4Fr
+                W6Jm0b5noNZMSpqoRc1kcbE3SyLz44gamXwmEDmiLpgHIv5b5awncQ5aF9hovDtU
+                6dcaoP01SQrzqZk9AgMBAAEwDQYJKoZIhvcNAQELBQADggEBAEsNGhoXHtCASzw+
+                hjFrXs4xKfr02eS6u3MFcTmxC2f5iU8V99qIvg+CSYuE3BqQJ48LQvq20+DB2WVx
+                Hp6PZ09ERvZRQiitLPgusarzs2BtRjZoZ8ahieYlI2MW5R+IhWHe/dTPttp2FFQ0
+                aoRnOjS6GQi48/SbOtVm7gNZ3/9CF3fD06usEgq9ic3Z4yK+lX2DD+FNQyF4Mupe
+                YyX0HZ+2wulWDHS5YYYIgQ5t3C0+E9nBVvqwqLIuskcEf7szN1Y7kH1+x/IZFfUD
+                joDYXFs0+yPB3zv0SBMsaN1JsD0sRYsU8JyvBQnvRUmEqE6u6IHGhu5/2PuoU7Fd
+                OTIEYqo=
+                -----END CERTIFICATE-----
