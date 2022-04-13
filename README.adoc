@@ -1,0 +1,47 @@
+== Connect Spring Security to RH-SSO (Keycloak)
+
+This repo extends from:
+
+https://github.com/spring-projects/spring-security/tree/5.2.0.RELEASE/samples/boot/saml2login
+
+And is based on documentation:
+
+https://docs.spring.io/spring-security/site/docs/5.2.1.RELEASE/reference/htmlsingle/#saml2
+
+My Demo RH-SSO endpoint:
+
+http://localhost:8080/auth/realms/saml-demo/protocol/saml/descriptor
+
+Other relevant info:
+- https://github.com/keycloak/keycloak/discussions/10187
+- https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.5/html-single/server_administration_guide/index#saml
+- https://docs.spring.io/spring-security/reference/servlet/saml2/login/overview.html
+
+Be sure not to use the separately packaged releases that were deprecated in favor of Spring Security subpackages:
+- https://spring.io/projects/spring-security-saml#support
+- https://spring.io/projects/spring-security-oauth#support
+
+Use:
+
+----
+<dependency>
+  <groupId>org.springframework.security</groupId>
+  <artifactId>spring-security-core</artifactId>
+  <version>5.6.2</version>
+</dependency>
+<dependency>
+  <groupId>org.springframework.security</groupId>
+  <artifactId>spring-security-saml2-service-provider</artifactId>
+  <version>5.6.2</version>
+</dependency>
+----
+
+Instead of:
+
+----
+<dependency>
+  <groupId>org.springframework.security.extensions</groupId>
+  <artifactId>spring-security-saml2-core</artifactId>
+  <version>1.0.0.RELEASE</version>
+</dependency>
+----
