@@ -13,11 +13,13 @@ My Demo RH-SSO endpoint:
 http://localhost:8080/auth/realms/saml-demo/protocol/saml/descriptor
 
 Other relevant info:
+
 - https://github.com/keycloak/keycloak/discussions/10187
 - https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.5/html-single/server_administration_guide/index#saml
 - https://docs.spring.io/spring-security/reference/servlet/saml2/login/overview.html
 
 Be sure not to use the separately packaged releases that were deprecated in favor of Spring Security subpackages:
+
 - https://spring.io/projects/spring-security-saml#support
 - https://spring.io/projects/spring-security-oauth#support
 
